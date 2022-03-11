@@ -15,6 +15,8 @@
 		29BB6BB427DA465E00B19518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BB6BB227DA465E00B19518 /* LaunchScreen.storyboard */; };
 		29BB6BBE27DA5ECF00B19518 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB6BBC27DA5ECF00B19518 /* CollectionViewCell.swift */; };
 		29BB6BBF27DA5ECF00B19518 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BB6BBD27DA5ECF00B19518 /* CollectionViewCell.xib */; };
+		29BB6BC827DB7E8500B19518 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB6BC627DB7E8500B19518 /* HeaderCollectionReusableView.swift */; };
+		29BB6BC927DB7E8500B19518 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29BB6BC727DB7E8500B19518 /* HeaderCollectionReusableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		29BB6BB527DA465E00B19518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BB6BBC27DA5ECF00B19518 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		29BB6BBD27DA5ECF00B19518 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		29BB6BC627DB7E8500B19518 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		29BB6BC727DB7E8500B19518 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		29BB6BA627DA465E00B19518 /* CollectionApp */ = {
 			isa = PBXGroup;
 			children = (
+				29BB6BC527DB7E0200B19518 /* Header */,
 				29BB6BBB27DA5E9F00B19518 /* Cell */,
 				29BB6BA727DA465E00B19518 /* AppDelegate.swift */,
 				29BB6BA927DA465E00B19518 /* SceneDelegate.swift */,
@@ -77,8 +82,17 @@
 			children = (
 				29BB6BBC27DA5ECF00B19518 /* CollectionViewCell.swift */,
 				29BB6BBD27DA5ECF00B19518 /* CollectionViewCell.xib */,
+				29BB6BC627DB7E8500B19518 /* HeaderCollectionReusableView.swift */,
+				29BB6BC727DB7E8500B19518 /* HeaderCollectionReusableView.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		29BB6BC527DB7E0200B19518 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29BB6BB427DA465E00B19518 /* LaunchScreen.storyboard in Resources */,
+				29BB6BC927DB7E8500B19518 /* HeaderCollectionReusableView.xib in Resources */,
 				29BB6BB127DA465E00B19518 /* Assets.xcassets in Resources */,
 				29BB6BBF27DA5ECF00B19518 /* CollectionViewCell.xib in Resources */,
 				29BB6BAF27DA465E00B19518 /* Main.storyboard in Resources */,
@@ -156,6 +171,7 @@
 				29BB6BAC27DA465E00B19518 /* CollectionViewController.swift in Sources */,
 				29BB6BA827DA465E00B19518 /* AppDelegate.swift in Sources */,
 				29BB6BBE27DA5ECF00B19518 /* CollectionViewCell.swift in Sources */,
+				29BB6BC827DB7E8500B19518 /* HeaderCollectionReusableView.swift in Sources */,
 				29BB6BAA27DA465E00B19518 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
