@@ -33,10 +33,10 @@
             </objects>
             <point key="canvasLocation" x="20" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--Spinner View Controller-->
         <scene sceneID="EP7-c5-mOj">
             <objects>
-                <viewController id="UDr-D0-bDI" sceneMemberID="viewController">
+                <viewController id="UDr-D0-bDI" customClass="SpinnerViewController" customModule="CollectionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4IV-m6-WxQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

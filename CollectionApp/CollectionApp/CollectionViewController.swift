@@ -12,6 +12,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     @IBOutlet var InfoCollectView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        createSpinnerView()
         InfoCollectView.register(UINib(nibName:"CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         InfoCollectView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
     }
@@ -26,8 +27,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath)
-            //headerView.backgroundColor = .blue
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
+            headerView.configura(texto: "ola")
             return headerView
         }
         return UICollectionReusableView()
@@ -35,24 +36,23 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     func collectionView(_ collectionsView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: 300, height: 300)
     }
+    func createSpinnerView() {
+        let child = SpinnerViewController()
 
-//    switch kind {
-//    case UICollectionView.elementKindSectionHeader:
-//
-//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath as IndexPath)
-//
-//        headerView.backgroundColor = UIColor.red
-//        return headerView
-//
-//    case UICollectionView.elementKindSectionFooter:
-//        let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath as IndexPath)
-//
-//        footerView.backgroundColor = UIColor.green
-//        return footerView
-//
-//    default:
-//
-//        assert(false, "Unexpected element kind")
+        // add the spinner view controller
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            // then remove the spinner view controller
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
     }
+}
 
 
